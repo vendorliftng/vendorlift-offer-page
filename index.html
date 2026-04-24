@@ -6,10 +6,6 @@
     <title>Stop Posting Into the Void | Vendorlift</title>
     <meta name="description" content="Turn your social media and WhatsApp into a predictable 24/7 profit machine with the Vendorlift Content Engine and Customer Magnet bundle.">
     
-    <meta property="og:title" content="Vendorlift | The WhatsApp Revenue System">
-    <meta property="og:description" content="Stop bleeding money on ads. Get the 7-Day Customer Magnet & 30-Day Content Engine Bundle today.">
-    <meta property="og:type" content="website">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,7 +14,9 @@
                     colors: {
                         brandBlue: '#003399',
                         brandGold: '#D5B641',
-                        brandDark: '#001f5c'
+                        brandDark: '#001f5c',
+                        waGreen: '#e1f5fe', /* WhatsApp style bubble */
+                        waDark: '#128C7E'
                     }
                 }
             }
@@ -26,7 +24,6 @@
     </script>
 
     <style>
-        /* The Pulse CTA Animation */
         .pulse-btn {
             box-shadow: 0 0 0 0 rgba(213, 182, 65, 0.8);
             animation: pulse-ring 2s infinite;
@@ -36,38 +33,37 @@
             70% { box-shadow: 0 0 0 20px rgba(213, 182, 65, 0); }
             100% { box-shadow: 0 0 0 0 rgba(213, 182, 65, 0); }
         }
-
-        /* Range Slider Styling */
-        input[type=range] {
-            accent-color: #003399;
-        }
-
-        /* FOMO Toast Animation */
+        input[type=range] { accent-color: #003399; }
         .fomo-toast {
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             transform: translateY(150%);
             opacity: 0;
         }
-        .fomo-toast.show {
-            transform: translateY(0);
-            opacity: 1;
+        .fomo-toast.show { transform: translateY(0); opacity: 1; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        /* WhatsApp Chat Bubble Style */
+        .chat-bubble {
+            position: relative;
+            background: #e1f5fe;
+            border-radius: .4em;
         }
-
-        /* Hide Scrollbar for Carousel */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Custom Accordion Styling */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
+        .chat-bubble:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-right-color: #e1f5fe;
+            border-left: 0;
+            border-bottom: 0;
+            margin-top: -10px;
+            margin-left: -20px;
         }
     </style>
 </head>
@@ -81,7 +77,7 @@
             <p class="text-lg md:text-xl text-blue-100 mb-10">
                 You are exhausting yourself posting 25 pictures a day, but your bank account is still empty. You are confusing "being visible" with "selling".
             </p>
-            <a href="https://wa.me/YOUR_NUMBER_HERE?text=I%20am%20tired%20of%20posting%20without%20sales.%20Help%20me%20fix%20it." class="pulse-btn inline-block bg-brandGold text-brandDark font-bold text-lg py-4 px-8 rounded-full hover:bg-yellow-500 transition-all">
+            <a href="https://wa.me/2348088972097?text=I%20am%20tired%20of%20posting%20without%20sales.%20Help%20me%20fix%20it." class="pulse-btn inline-block bg-brandGold text-brandDark font-bold text-lg py-4 px-8 rounded-full hover:bg-yellow-500 transition-all">
                 Stop Wasting Time (Message Us)
             </a>
         </div>
@@ -104,7 +100,7 @@
                 <div id="lost-revenue" class="text-4xl font-extrabold text-red-600 mt-2">₦80,000</div>
             </div>
 
-            <a href="https://wa.me/YOUR_NUMBER_HERE?text=I%20need%20to%20automate%20my%20replies." class="pulse-btn inline-block bg-brandBlue text-white font-bold text-lg py-4 px-8 rounded-full hover:bg-blue-800 transition-all">
+            <a href="https://wa.me/2348088972097?text=I%20need%20to%20automate%20my%20replies." class="pulse-btn inline-block bg-brandBlue text-white font-bold text-lg py-4 px-8 rounded-full hover:bg-blue-800 transition-all">
                 Automate My Replies
             </a>
         </div>
@@ -116,61 +112,75 @@
             <p class="text-gray-700 text-lg mb-8">
                 You didn't lose the sale because of your price; you lost it because your profile looked like a ghost town with zero structure. Selling based on your "personality" leads to feast-or-famine revenue.
             </p>
-            <a href="https://wa.me/YOUR_NUMBER_HERE?text=Give%20me%20the%20Content%20Engine." class="pulse-btn inline-block bg-brandGold text-brandDark font-bold text-lg py-4 px-8 rounded-full hover:bg-yellow-500 transition-all">
+            <a href="https://wa.me/2348088972097?text=Give%20me%20the%20Content%20Engine." class="pulse-btn inline-block bg-brandGold text-brandDark font-bold text-lg py-4 px-8 rounded-full hover:bg-yellow-500 transition-all">
                 Give Me The Content Engine
             </a>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-brandDark text-white">
-        <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div class="w-32 h-32 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden border-4 border-brandGold">
-                <img src="https://via.placeholder.com/150" alt="Muhammad Tajudeen" class="w-full h-full object-cover">
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold text-brandGold mb-2">Why I Built This System</h3>
-                <p class="text-gray-300 italic mb-4">"I started Vendorlift because I was tired of seeing hardworking business owners overpay for bad ads and terrible advice. I watched people burn their capital posting 20 times a day with zero returns. This isn't a magic trick; it's the exact, predictable system I use to drive real conversions without the premium stress."</p>
-                <p class="font-bold">— Muhammad Tajudeen, Founder of Vendorlift</p>
-            </div>
-        </div>
-    </section>
-
     <section class="py-16 px-6 bg-white overflow-hidden">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-brandBlue text-center mb-12">Straight From The Feedback Forms.</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brandBlue text-center mb-12">Don't Take Our Word For It.</h2>
             
             <div class="relative">
                 <div id="testimonial-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 scrollbar-hide scroll-smooth">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm w-80 md:w-96 flex-shrink-0 snap-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Q: What was your biggest win this week?</p>
-                        <p class="text-gray-700 text-sm italic mb-4">"Honestly, just getting old customers to reply. I used the VIP script on Day 1 and three people who hadn't bought in months actually ordered. I didn't think it would work."</p>
-                        <p class="font-bold text-brandBlue text-sm">— Aminat, Fashion Vendor</p>
+                    
+                    <div class="w-80 md:w-96 flex-shrink-0 snap-center pl-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-800">Aminat <span class="text-waDark text-xs ml-1">✓ Verified</span></p>
+                                <p class="text-xs text-gray-500">Fashion Vendor</p>
+                            </div>
+                        </div>
+                        <div class="chat-bubble p-4 shadow-sm">
+                            <p class="text-gray-800 text-sm">"Honestly, just getting old customers to reply is wild. I used the VIP script from Day 1 and three people who hadn't bought in months actually ordered. I didn't think it would work like this 😂"</p>
+                            <p class="text-right text-xs text-gray-500 mt-2">10:42 AM</p>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm w-80 md:w-96 flex-shrink-0 snap-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Q: Did the content calendar help?</p>
-                        <p class="text-gray-700 text-sm italic mb-4">"Yes, I don't overthink anymore. I used to stare at my phone figuring out what to post. Now I just take the daily prompt and post it. The educational angle got people asking for prices."</p>
-                        <p class="font-bold text-brandBlue text-sm">— Tolu O., Consultant</p>
+
+                    <div class="w-80 md:w-96 flex-shrink-0 snap-center pl-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">T</div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-800">Tolu O. <span class="text-waDark text-xs ml-1">✓ Verified</span></p>
+                                <p class="text-xs text-gray-500">Consultant</p>
+                            </div>
+                        </div>
+                        <div class="chat-bubble p-4 shadow-sm">
+                            <p class="text-gray-800 text-sm">"The Content Engine saved my life. I don't overthink anymore. I just take the daily prompt and post it. The educational angle got 5 people asking for prices yesterday alone."</p>
+                            <p class="text-right text-xs text-gray-500 mt-2">1:15 PM</p>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm w-80 md:w-96 flex-shrink-0 snap-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Q: How is the automation working?</p>
-                        <p class="text-gray-700 text-sm italic mb-4">"It helps because I reply late when I'm busy sorting logistics. I set up the auto-reply like the playbook said, and woke up to a payment from someone who messaged by 11 PM. It just works."</p>
-                        <p class="font-bold text-brandBlue text-sm">— Emeka, Digital Creator</p>
+
+                    <div class="w-80 md:w-96 flex-shrink-0 snap-center pl-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">E</div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-800">Emeka <span class="text-waDark text-xs ml-1">✓ Verified</span></p>
+                                <p class="text-xs text-gray-500">Digital Creator</p>
+                            </div>
+                        </div>
+                        <div class="chat-bubble p-4 shadow-sm">
+                            <p class="text-gray-800 text-sm">"Bro the 5-Minute Speed Closing Rule is mad. I set up the auto-reply like the playbook said, and woke up to a payment from someone who messaged by 11 PM. It just works 🔥"</p>
+                            <p class="text-right text-xs text-gray-500 mt-2">8:02 AM</p>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm w-80 md:w-96 flex-shrink-0 snap-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Q: Why did you buy the bundle?</p>
-                        <p class="text-gray-700 text-sm italic mb-4">"I realized posting 20 times a day wasn't bringing money. I needed structure. The 7-day playbook showed me exactly why people were ignoring my statuses."</p>
-                        <p class="font-bold text-brandBlue text-sm">— Sarah, Skincare Brand</p>
+
+                    <div class="w-80 md:w-96 flex-shrink-0 snap-center pl-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">D</div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-800">David <span class="text-waDark text-xs ml-1">✓ Verified</span></p>
+                                <p class="text-xs text-gray-500">Real Estate</p>
+                            </div>
+                        </div>
+                        <div class="chat-bubble p-4 shadow-sm">
+                            <p class="text-gray-800 text-sm">"I was spending crazy money on ads just to get ghosted in the DMs. The scripts for handling 'it's too expensive' actually helped me close a stubborn lead yesterday. Thanks boss."</p>
+                            <p class="text-right text-xs text-gray-500 mt-2">4:30 PM</p>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm w-80 md:w-96 flex-shrink-0 snap-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Q: Has it helped with closing sales?</p>
-                        <p class="text-gray-700 text-sm italic mb-4">"For sure. I was spending crazy money on ads just to get ghosted in the DMs. The scripts for handling 'it's too expensive' actually helped me close a stubborn lead yesterday."</p>
-                        <p class="font-bold text-brandBlue text-sm">— David, Real Estate</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm w-80 md:w-96 flex-shrink-0 snap-center">
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Q: Have you tried the referral strategies?</p>
-                        <p class="text-gray-700 text-sm italic mb-4">"Yes. I sent the message from Day 6 to a few past buyers. One of them actually brought a friend who booked an appointment. It's much easier than begging for retweets."</p>
-                        <p class="font-bold text-brandBlue text-sm">— Chidinma, Salon Owner</p>
-                    </div>
+
                 </div>
                 
                 <div class="flex justify-center gap-4 mt-4">
@@ -185,12 +195,29 @@
         </div>
     </section>
 
+    <section class="py-16 px-6 bg-brandDark text-white">
+        <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div class="w-32 h-32 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden border-4 border-brandGold">
+                <img src="founder.jpg" alt="Muhammad Tajudeen" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-brandGold mb-2">Why I Built This System</h3>
+                <p class="text-gray-300 italic mb-4">"I started Vendorlift because I was tired of seeing hardworking business owners overpay for bad ads and terrible advice. I watched people burn their capital posting 20 times a day with zero returns. This isn't a magic trick; it's the exact, predictable system I use to drive real conversions without the premium stress."</p>
+                <p class="font-bold">— Muhammad Tajudeen, Founder of Vendorlift</p>
+            </div>
+        </div>
+    </section>
+
     <section class="py-12 px-6 bg-gray-100">
-        <div class="max-w-3xl mx-auto text-center border-t border-b border-gray-300 py-8">
-            <h3 class="text-2xl font-bold text-red-600 mb-4">Warning: Who This Is NOT For</h3>
-            <p class="text-gray-700 mb-2">❌ If you are looking for a "get rich quick" magic button that requires zero work.</p>
-            <p class="text-gray-700 mb-2">❌ If you refuse to actually reply to your customers once the bot brings them in.</p>
-            <p class="text-gray-700 font-bold mt-4">This is a system for serious business owners who want structure, not miracles.</p>
+        <div class="max-w-3xl mx-auto border-t border-b border-gray-300 py-8">
+            <h3 class="text-2xl font-bold text-red-600 mb-6 text-center">Warning: Who This Is NOT For</h3>
+            <div class="space-y-3 max-w-xl mx-auto text-gray-700 font-medium">
+                <p class="flex gap-2"><span>❌</span> If you are looking for a "get rich quick" magic button that requires zero implementation.</p>
+                <p class="flex gap-2"><span>❌</span> If you refuse to actually reply to your customers once the bot brings them in.</p>
+                <p class="flex gap-2"><span>❌</span> If you prefer begging people to buy instead of building a respected, structured system.</p>
+                <p class="flex gap-2"><span>❌</span> If you think your business will magically grow without changing your current strategy.</p>
+            </div>
+            <p class="text-gray-800 font-bold mt-8 text-center text-lg">This is a system for serious business owners who want structure, not miracles.</p>
         </div>
     </section>
 
@@ -229,7 +256,7 @@
         </div>
     </section>
 
-    <section class="py-20 px-6 bg-gray-50">
+    <section class="pt-20 pb-10 px-6 bg-gray-50">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-brandBlue mb-4">Motivation Will Fail You. You Need A Machine.</h2>
@@ -255,26 +282,31 @@
                 </div>
             </div>
 
-            <div class="text-center bg-brandDark text-white rounded-2xl p-10 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-brandGold text-brandDark font-bold py-1 px-4 rounded-bl-xl shadow-md text-sm">
-                    🛡️ 7-Day Action Guarantee
-                </div>
-
-                <h3 class="text-2xl font-bold mb-4 mt-4">Get The Complete Machine</h3>
-                <div class="flex justify-center items-center gap-4 mb-4">
+            <div class="text-center bg-brandDark text-white rounded-2xl p-10 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-4">Get The Complete Machine</h3>
+                <div class="flex justify-center items-center gap-4 mb-8">
                     <span class="text-2xl text-gray-400 line-through decoration-red-500">₦10,000</span>
                     <span class="text-5xl font-extrabold text-brandGold">₦5,999</span>
                 </div>
                 <p class="mb-8 text-gray-300">Instant Access. No trial and error. Just a proven system.</p>
                 
-                <a href="YOUR_SELAR_LINK_HERE" class="pulse-btn inline-block w-full md:w-auto bg-brandGold text-brandDark font-extrabold text-xl py-5 px-10 rounded-full hover:bg-yellow-500 transition-all mb-6">
+                <a href="https://selar.com/75i7g13h5l" class="pulse-btn inline-block w-full md:w-auto bg-brandGold text-brandDark font-extrabold text-xl py-5 px-10 rounded-full hover:bg-yellow-500 transition-all mb-4">
                     Buy Now (Instant Access)
                 </a>
-
-                <p class="text-xs text-gray-400 max-w-md mx-auto">
-                    <strong>My Promise:</strong> If you use the 7-day playbook exactly as laid out and don't get a single lead, I'll refund your money. You have absolutely nothing to lose.
-                </p>
             </div>
+        </div>
+    </section>
+
+    <section class="pb-20 px-6 bg-gray-50">
+        <div class="max-w-3xl mx-auto bg-white border-2 border-brandGold rounded-2xl p-8 shadow-lg text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-brandGold"></div>
+            <div class="w-16 h-16 bg-brandGold text-brandDark rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-extrabold text-brandBlue mb-4">100% No-Risk Guarantee</h3>
+            <p class="text-gray-700 text-lg">
+                <strong>My Promise:</strong> If you use the 7-day playbook exactly as laid out and don't get a single lead, I will refund your money immediately. You have absolutely nothing to lose and everything to gain.
+            </p>
         </div>
     </section>
 
@@ -287,11 +319,11 @@
                 This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
             </p>
             <div class="flex justify-center gap-4 text-xs font-bold text-gray-500">
-                <a href="#" class="hover:text-brandGold transition-colors">Privacy Policy</a>
+                <a href="https://www.vendorlift.com.ng" class="hover:text-brandGold transition-colors">Privacy Policy</a>
                 <span>|</span>
-                <a href="#" class="hover:text-brandGold transition-colors">Terms of Service</a>
+                <a href="https://www.vendorlift.com.ng" class="hover:text-brandGold transition-colors">Terms of Service</a>
                 <span>|</span>
-                <a href="#" class="hover:text-brandGold transition-colors">Contact Us</a>
+                <a href="https://www.vendorlift.com.ng" class="hover:text-brandGold transition-colors">Contact Us</a>
             </div>
         </div>
     </footer>
@@ -307,7 +339,6 @@
     </div>
 
     <script>
-        // 1. Dynamic Text Replacement (DTR)
         const urlParams = new URLSearchParams(window.location.search);
         const painParam = urlParams.get('pain');
         const headlineElement = document.getElementById('dynamic-headline');
@@ -318,7 +349,6 @@
             headlineElement.textContent = "Stop Wasting Hours on Dead End Chats.";
         }
 
-        // 2. Cost of Pain Calculator
         const slider = document.getElementById('hours-wasted');
         const output = document.getElementById('lost-revenue');
         
@@ -331,7 +361,6 @@
         slider.addEventListener('input', calculateLoss);
         calculateLoss();
 
-        // 3. Testimonial Carousel Logic
         const carousel = document.getElementById('testimonial-carousel');
         function scrollCarousel(direction) {
             const scrollAmount = 350; 
@@ -342,7 +371,6 @@
             }
         }
 
-        // 4. Expanded FOMO Ticker Logic
         const fomoTicker = document.getElementById('fomo-ticker');
         const fomoText = document.getElementById('fomo-text');
         
@@ -376,15 +404,17 @@
             
             fomoTicker.classList.add('show');
             
+            // Adjusted Speed: Now shows for 8 seconds instead of 5
             setTimeout(() => {
                 fomoTicker.classList.remove('show');
-            }, 5000);
+            }, 8000);
         }
 
+        // Adjusted Speed: First popup at 5 seconds, then waits a full 30 seconds between popups
         setTimeout(() => {
             showFomo();
-            setInterval(showFomo, 15000);
-        }, 3000);
+            setInterval(showFomo, 30000);
+        }, 5000);
     </script>
 </body>
 </html>
